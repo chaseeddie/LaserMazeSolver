@@ -25,6 +25,14 @@ namespace LaserMaze.Services
             maze.Mirrors = GetMirrors(file);
             maze.LaserStartPoint = _laserService.GetLaserStartingPoint(file);
 
+            if (maze.LaserStartPoint!.X < 0
+                || maze.LaserStartPoint!.Y < 0
+                || maze.LaserStartPoint!.X >= maze.Width
+                || maze.LaserStartPoint!.Y >= maze.Height)
+            {
+                throw new Exception("Invalid laser starting location. Laser is out of bounds");
+            }
+
             maze = _laserService.SetInitialLaserOrientation(maze);
 
             return maze;

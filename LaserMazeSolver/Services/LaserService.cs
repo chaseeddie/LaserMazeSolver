@@ -25,7 +25,7 @@ namespace LaserMaze.Services
 
             string laserSection = file[laserSectionIndex + 1];
 
-            string[] laserDetails = laserSection.Split(",");
+            string[] laserDetails = laserSection.Split(","); // X , Yorientation
             var letter = Regex.Match(laserDetails[1], @"[A-Za-z]");
             if (letter.Success)
             {
@@ -43,6 +43,7 @@ namespace LaserMaze.Services
             {
                 throw new Exception("Invalid laser starting point");
             }
+
             return startPoint;
         }
 
