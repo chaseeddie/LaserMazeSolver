@@ -184,9 +184,9 @@ namespace LaserMaze.Services
                 || currentPoint.X >= maze.Width
                 || currentPoint.Y >= maze.Height);
         }
-        public char SetLaserOutputOrientation(LaserPoint point)
+        public char SetLaserOutputOrientation(LaserPoint? point)
         {
-            return (point.Orientation == 'U' || point.Orientation == 'D') ? 'V' : 'H'; // return to expected output
+            return (point?.Orientation == 'U' || point?.Orientation == 'D') ? 'V' : 'H'; // return to expected output
         }
     }
 }

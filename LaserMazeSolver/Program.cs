@@ -26,7 +26,7 @@ public class LaserMazeSolver
             LaserPoint result = laserService!.RunLaserPath(maze);
 
             Console.WriteLine($"Maze Dimensions: {maze.Width}, {maze.Height}");
-            Console.WriteLine($"Starting Point: {maze.LaserStartPoint?.X}, {maze.LaserStartPoint?.Y} {laserService.SetLaserOutputOrientation(maze.LaserStartPoint)}");
+            Console.WriteLine($"Starting Point: {maze.LaserStartPoint?.X}, {maze.LaserStartPoint?.Y} {laserService.SetLaserOutputOrientation(maze!.LaserStartPoint!)}");
             Console.WriteLine($"Exit Point: {result.X}, {result.Y} {laserService.SetLaserOutputOrientation(result)}");
         }
         catch (Exception e)
