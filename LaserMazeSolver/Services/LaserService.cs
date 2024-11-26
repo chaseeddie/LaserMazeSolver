@@ -50,8 +50,8 @@ namespace LaserMaze.Services
         {
             var currentPoint = new LaserPoint()
             {
-                X = maze.LaserStartPoint.X,
-                Y = maze.LaserStartPoint.Y,
+                X = maze.LaserStartPoint!.X,
+                Y = maze.LaserStartPoint!.Y,
                 Orientation = maze.LaserStartPoint.Orientation
             };
 
@@ -71,7 +71,7 @@ namespace LaserMaze.Services
                 }
                 else
                 {
-                    Mirror mirrorOnPoint = _mirrorService.FindMirrorAtCurrentPoint(maze, currentPoint);
+                    Mirror? mirrorOnPoint = _mirrorService.FindMirrorAtCurrentPoint(maze, currentPoint);
                     if (mirrorOnPoint != null)
                     {
                         // change orientation but wait til next loop to move

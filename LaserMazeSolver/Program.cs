@@ -22,8 +22,8 @@ public class LaserMazeSolver
             var mazeService = serviceProvider.BuildServiceProvider().GetService<IMazeService>();
             var laserService = serviceProvider.BuildServiceProvider().GetService<ILaserService>();
 
-            Maze maze = mazeService.ReadMazeFile(args[0]);
-            LaserPoint result = laserService.RunLaserPath(maze);
+            Maze maze = mazeService!.ReadMazeFile(args[0]);
+            LaserPoint result = laserService!.RunLaserPath(maze);
 
             Console.WriteLine($"Maze Dimensions: {maze.Width}, {maze.Height}");
             Console.WriteLine($"Starting Point: {maze.LaserStartPoint?.X}, {maze.LaserStartPoint?.Y} {laserService.SetLaserOutputOrientation(maze.LaserStartPoint)}");

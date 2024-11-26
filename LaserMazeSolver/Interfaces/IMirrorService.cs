@@ -4,6 +4,6 @@ namespace LaserMaze.Interfaces
 {
     public interface IMirrorService
     {
-        public Mirror FindMirrorAtCurrentPoint(Maze maze, LaserPoint currentPoint);
+        public Mirror? FindMirrorAtCurrentPoint(Maze maze, LaserPoint currentPoint);
     }
 }

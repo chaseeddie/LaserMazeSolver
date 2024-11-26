@@ -52,9 +52,9 @@ namespace LaserMaze.Services
             return mirror;
         }
 
-        public Mirror FindMirrorAtCurrentPoint(Maze maze, LaserPoint currentPoint)
+        public Mirror? FindMirrorAtCurrentPoint(Maze maze, LaserPoint currentPoint)
         {
-            return maze.Mirrors.FirstOrDefault(m => m.X == currentPoint?.X && m.Y == currentPoint?.Y);
+            return maze.Mirrors?.FirstOrDefault(m => m.X == currentPoint?.X && m.Y == currentPoint?.Y);
         }
     }
 }
